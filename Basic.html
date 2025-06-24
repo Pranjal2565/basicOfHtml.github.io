@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Cheat Sheet</title>
+    <style>
+        /* ===== TEXT PROPERTIES ===== */
+        .text-properties {
+            /* Font properties */
+            font-family: Arial, sans-serif; /* Font family stack */
+            font-size: 16px; /* Font size in pixels */
+            font-weight: normal; /* normal | bold | bolder | lighter | 100-900 */
+            font-style: normal; /* normal | italic | oblique */
+            font-variant: normal; /* normal | small-caps */
+            
+            /* Text decoration */
+            text-decoration: none; /* none | underline | overline | line-through */
+            text-transform: none; /* none | capitalize | uppercase | lowercase */
+            text-align: left; /* left | right | center | justify */
+            text-indent: 0; /* Indentation of first line */
+            
+            /* Spacing */
+            letter-spacing: normal; /* Space between characters */
+            word-spacing: normal; /* Space between words */
+            line-height: 1.5; /* Space between lines */
+            white-space: normal; /* normal | nowrap | pre | pre-wrap | pre-line */
+            
+            /* Color */
+            color: #333; /* Text color */
+            direction: ltr; /* ltr | rtl - text direction */
+            
+            /* Shadow */
+            text-shadow: none; /* h-shadow v-shadow blur color */
+        }
+
+        /* ===== BOX MODEL PROPERTIES ===== */
+        .box-model {
+            width: auto; /* Width of element */
+            height: auto; /* Height of element */
+            margin: 0; /* Space outside border */
+            padding: 0; /* Space inside border */
+            border: none; /* Border around element */
+            box-sizing: content-box; /* content-box | border-box */
+            display: block; /* block | inline | inline-block | flex | grid | etc. */
+            position: static; /* static | relative | absolute | fixed | sticky */
+            float: none; /* none | left | right */
+            clear: none; /* none | left | right | both */
+            overflow: visible; /* visible | hidden | scroll | auto */
+        }
+
+        /* ===== BACKGROUND PROPERTIES ===== */
+        .background-properties {
+            background-color: transparent; /* Background color */
+            background-image: none; /* Background image */
+            background-repeat: repeat; /* repeat | repeat-x | repeat-y | no-repeat */
+            background-position: 0% 0%; /* Position of background image */
+            background-attachment: scroll; /* scroll | fixed */
+            background-size: auto; /* auto | cover | contain | width height */
+        }
+
+        /* ===== LIST PROPERTIES ===== */
+        .list-properties {
+            list-style-type: disc; /* disc | circle | square | decimal | etc. */
+            list-style-position: outside; /* inside | outside */
+            list-style-image: none; /* URL to image */
+        }
+
+        /* ===== TABLE PROPERTIES ===== */
+        .table-properties {
+            border-collapse: separate; /* separate | collapse */
+            border-spacing: 2px; /* Space between cells */
+            empty-cells: show; /* show | hide */
+            caption-side: top; /* top | bottom */
+            table-layout: auto; /* auto | fixed */
+        }
+
+        /* ===== FORM PROPERTIES ===== */
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        /* ===== LAYOUT STYLES ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .example-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .event-demo {
+            padding: 15px;
+            background-color: #e8f4fc;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Development Cheat Sheet</h1>
+        <p>Quick reference for HTML, CSS, and JavaScript</p>
+    </header>
+
+    <section id="document-structure">
+        <h2>Document Structure</h2>
+        
+        <h3>XHTML Document Structure</h3>
+        <div class="example-container">
+            <pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <h3>HTML5 Document Structure</h3>
+        <div class="example-container">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+    </section>
+
+    <section id="text-markup">
+        <h2>Basic Text Markup</h2>
+        
+        <div class="example-container">
+            <h1>Heading Level 1</h1>
+            <h2>Heading Level 2</h2>
+            <h3>Heading Level 3</h3>
+            <h4>Heading Level 4</h4>
+            <h5>Heading Level 5</h5>
+            <h6>Heading Level 6</h6>
+            
+            <p>This is a paragraph. Paragraphs are block-level elements.</p>
+            
+            <p>This paragraph contains <strong>strong (bold) text</strong>, 
+            <em>emphasized (italic) text</em>, and <span>span elements</span> 
+            which are inline containers.</p>
+            
+            <p>Here's some <code>inline code</code> and a <a href="#">hyperlink</a>.</p>
+            
+            <p>Line<br>break<br>example.</p>
+            
+            <hr>
+            
+            <p>Horizontal rule above.</p>
+        </div>
+    </section>
+
+    <section id="images">
+        <h2>Images</h2>
+        
+        <div class="example-container">
+            <img src="https://via.placeholder.com/400x200" alt="Placeholder image" width="400" height="200">
+            
+            <p>Image with alternative text:</p>
+            <pre><code>&lt;img src="image.jpg" alt="Description" width="400" height="200"&gt;</code></pre>
+            
+            <p>Image as a link:</p>
+            <a href="#">
+                <img src="https://via.placeholder.com/150" alt="Clickable image" width="150" height="150">
+            </a>
+        </div>
+    </section>
+
+    <section id="lists">
+        <h2>Lists</h2>
+        
+        <div class="example-container">
+            <h3>Unordered List</h3>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ul>
+            
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+            
+            <h3>Definition List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+            
+            <h3>Nested List</h3>
+            <ul>
+                <li>Main item 1
+                    <ul>
+                        <li>Sub item 1</li>
+                        <li>Sub item 2</li>
+                    </ul>
+                </li>
+                <li>Main item 2</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="tables">
+        <h2>Tables</h2>
+        
+        <div class="example-container">
+            <table border="1" width="100%">
+                <caption>Sample Table</caption>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Cell 1</td>
+                        <td>Row 1, Cell 2</td>
+                        <td>Row 1, Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Cell 1</td>
+                        <td colspan="2">Row 2, Cell 2 & 3 (colspan)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Row 3 & 4, Cell 1 (rowspan)</td>
+                        <td>Row 3, Cell 2</td>
+                        <td>Row 3, Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 4, Cell 2</td>
+                        <td>Row 4, Cell 3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Footer 1</td>
+                        <td>Footer 2</td>
+                        <td>Footer 3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <section id="forms">
+        <h2>Forms</h2>
+        
+        <div class="example-container">
+            <form action="/submit" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="18" max="99">
+                    </div>
+                    
+                    <div>
+                        <label for="birthdate">Birthdate:</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <div>
+                        <label>Gender:</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                    
+                    <div>
+                        <label>Interests:</label>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports">Sports</label>
+                        
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music">Music</label>
+                        
+                        <input type="checkbox" id="reading" name="interests" value="reading">
+                        <label for="reading">Reading</label>
+                    </div>
+                    
+                    <div>
+                        <label for="country">Country:</label>
+                        <select id="country" name="country">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio" rows="4"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="avatar">Upload Avatar:</label>
+                        <input type="file" id="avatar" name="avatar">
+                    </div>
+                </fieldset>
+                
+                <div>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                    <button type="button" id="demo-btn">Demo Button</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="css">
+        <h2>CSS Examples</h2>
+        
+        <div class="example-container">
+            <h3>Inline Styles</h3>
+            <p style="color: red; font-weight: bold;">This paragraph has inline styles.</p>
+            
+            <h3>Internal Stylesheet</h3>
+            <p>All styles in this document are defined in the &lt;style&gt; section in the head.</p>
+            
+            <h3>External Stylesheet</h3>
+            <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+            
+            <h3>Selectors</h3>
+            <ul>
+                <li><strong>Element:</strong> <code>p { color: blue; }</code></li>
+                <li><strong>Class:</strong> <code>.highlight { background: yellow; }</code></li>
+                <li><strong>ID:</strong> <code>#header { font-size: 2em; }</code></li>
+                <li><strong>Attribute:</strong> <code>input[type="text"] { border: 1px solid #ccc; }</code></li>
+                <li><strong>Pseudo-class:</strong> <code>a:hover { color: red; }</code></li>
+            </ul>
+            
+            <h3>Box Model</h3>
+            <div style="width: 200px; height: 100px; padding: 20px; border: 5px solid black; margin: 30px; background-color: lightblue;">
+                Content Box
+            </div>
+            
+            <h3>Flexbox</h3>
+            <div style="display: flex; justify-content: space-between; border: 1px solid #ccc; padding: 10px;">
+                <div style="background: lightblue; padding: 10px;">Item 1</div>
+                <div style="background: lightgreen; padding: 10px;">Item 2</div>
+                <div style="background: lightcoral; padding: 10px;">Item 3</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="javascript">
+        <h2>JavaScript Examples</h2>
+        
+        <div class="example-container">
+            <h3>getElementById</h3>
+            <p id="demo-text">This text will change when you click the button.</p>
+            <button onclick="changeText()" class="btn">Change Text</button>
+            
+            <h3>Event Listeners</h3>
+            <div class="event-demo">
+                <button id="event-btn" class="btn">Click Me</button>
+                <p id="event-output">Event output will appear here.</p>
+            </div>
+            
+            <h3>Form Validation</h3>
+            <form id="demo-form">
+                <div>
+                    <label for="username">Username (min 4 chars):</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <button type="submit" class="btn">Submit</button>
+                <p id="form-message"></p>
+            </form>
+            
+            <h3>DOM Manipulation</h3>
+            <div id="dom-demo">
+                <button id="add-item" class="btn">Add Item</button>
+                <button id="remove-item" class="btn">Remove Item</button>
+                <ul id="item-list">
+                    <li>Initial Item</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="html5">
+        <h2>HTML5 Features</h2>
+        
+        <div class="example-container">
+            <h3>New Semantic Elements</h3>
+            <pre><code>&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;main&gt;</code></pre>
+            
+            <h3>New Input Types</h3>
+            <ul>
+                <li><code>color</code> - Color picker</li>
+                <li><code>date</code>, <code>time</code>, <code>datetime-local</code> - Date/time pickers</li>
+                <li><code>email</code> - Email address</li>
+                <li><code>number</code> - Numeric input</li>
+                <li><code>range</code> - Slider control</li>
+                <li><code>search</code> - Search field</li>
+                <li><code>tel</code> - Telephone number</li>
+                <li><code>url</code> - URL input</li>
+            </ul>
+            
+            <h3>Multimedia</h3>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <h3>Canvas</h3>
+            <canvas id="demo-canvas" width="200" height="100" style="border:1px solid #000;"></canvas>
+        </div>
+    </section>
+
+    <footer>
+        <p>Web Development Cheat Sheet &copy; 2023</p>
+    </footer>
+
+    <script>
+        // getElementById example
+        function changeText() {
+            document.getElementById('demo-text').textContent = "Text changed using getElementById!";
+        }
+
+        // Event listener example
+        document.getElementById('event-btn').addEventListener('click', function() {
+            document.getElementById('event-output').textContent = "Button clicked at " + new Date().toLocaleTimeString();
+        });
+
+        // Mouse events
+        document.getElementById('event-btn').addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#2ecc71';
+        });
+
+        document.getElementById('event-btn').addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#3498db';
+        });
+
+        // Form validation
+        document.getElementById('demo-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const message = document.getElementById('form-message');
+            
+            if (username.length < 4) {
+                message.textContent = "Username must be at least 4 characters";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Form submitted successfully!";
+                message.style.color = "green";
+                // In a real application, you would submit the form here
+            }
+        });
+
+        // DOM manipulation
+        document.getElementById('add-item').addEventListener('click', function() {
+            const list = document.getElementById('item-list');
+            const newItem = document.createElement('li');
+            newItem.textContent = "New Item " + (list.children.length + 1);
+            list.appendChild(newItem);
+        });
+
+        document.getElementById('remove-item').addEventListener('click', function() {
+            const list = document.getElementById('item-list');
+            if (list.children.length > 1) {
+                list.removeChild(list.lastChild);
+            }
+        });
+
+        // Canvas example
+        const canvas = document.getElementById('demo-canvas');
+        if (canvas.getContext) {
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgb(200, 0, 0)';
+            ctx.fillRect(10, 10, 50, 50);
+            ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+            ctx.fillRect(30, 30, 50, 50);
+        }
+    </script>
+</body>
+</html>
